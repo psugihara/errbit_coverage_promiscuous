@@ -38,3 +38,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'airbrake'
+
+gem 'rspec-rails'
+gem 'ruby-prof'
+gem 'test-unit'
+gem 'capybara'

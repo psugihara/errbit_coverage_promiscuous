@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/crowdtap/promiscuous.git
-  revision: 6fa9e5b83236c21d4f521e466d078e22129a3e20
+  revision: d401e1b7316ed43b36d82e7cd5204ddf271f9e40
   specs:
     promiscuous (0.53.1)
       activemodel (>= 3.0.0)
@@ -10,6 +10,8 @@ GIT
       celluloid (~> 0.12.4)
       celluloid-io (~> 0.12.1)
       fnv (= 0.2.0)
+      multi_json (~> 1.0)
+      oj (~> 2.0.10)
       redis (~> 3.0.2)
       ruby-progressbar (~> 1.0.2)
 
@@ -81,6 +83,7 @@ GEM
     mime-types (1.21)
     multi_json (1.7.2)
     nio4r (0.4.3)
+    oj (2.0.10)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)

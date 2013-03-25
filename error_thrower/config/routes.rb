@@ -1,4 +1,13 @@
 ErrorThrower::Application.routes.draw do
+  resources :flights
+
+
+  resources :sales
+
+
+  resources :users
+
+
   resources :products
 
 

@@ -1,0 +1,22 @@
+- content_for :title, 'Apps'
+
+%table.apps
+  %thead
+    %tr
+      %th Name
+      %th Errors
+  %tbody
+    - @apps.each do |app|
+      %tr
+        %td.name= link_to app.name, app_path(app)
+        %td.count
+          - if app.problem_count > 0
+            - unresolved = app.problem_count
+            = link_to unresolved, app_path(app), :class => (unresolved == 0 ? "resolved" : nil)
+    - if @apps.none?
+      %tr
+        %td{:colspan => 3}
+          %em
+            No apps here.
+            = link_to 'Click here to create your first one', new_app_path
+

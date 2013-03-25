@@ -1,0 +1,11 @@
+- content_for :title, @app.name
+- content_for :meta do
+  %strong Errors Caught:
+  = @app.problems.count
+
+- if @app.problems.any?
+  %h3.clear Errors
+  %section
+    .problem_table{:id => 'problem_table'}
+      = render 'graph', :app => @app
+

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130323203741) do
 
   create_table "notices", :force => true do |t|
     t.string   "message"
+    t.string   "errbit_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

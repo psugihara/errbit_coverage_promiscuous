@@ -41,5 +41,5 @@ gem 'airbrake'
 
 gem 'rspec-rails'
 gem 'ruby-prof'
-gem 'test-unit'
+gem 'test-unit', :require => false
 gem 'capybara'

@@ -1,0 +1,17 @@
+%h1 Listing backtraces
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @backtraces.each do |backtrace|
+    %tr
+      %td= link_to 'Show', backtrace
+      %td= link_to 'Edit', edit_backtrace_path(backtrace)
+      %td= link_to 'Destroy', backtrace, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Backtrace', new_backtrace_path

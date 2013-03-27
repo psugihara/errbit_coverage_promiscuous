@@ -1,0 +1,6 @@
+- content_for :title, 'Notices'
+
+%div#chart
+
+:javascript
+  window.messages = #{@message_occurences.to_json};

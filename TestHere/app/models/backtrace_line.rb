@@ -14,32 +14,8 @@ class BacktraceLine
 
   delegate :app, :to => :backtrace
 
-  include Promiscuous::Subscriber
-  subscribe :number, :column, :file, :method, :backtrace
-
   def to_s
-    "#{file_relative}:#{number}" << (column.present? ? ":#{column}" : "")
-  end
-
-  def in_app?
-    !!(file =~ IN_APP_PATH)
-  end
-
-  def path
-    File.dirname(file).gsub(/^\.$/, '') + "/"
-  end
-
-  def file_relative
-    file.to_s.sub(IN_APP_PATH, '')
-  end
-
-  def file_name
-    File.basename file
-  end
-
-  def decorated_path
-    path.sub(BacktraceLine::IN_APP_PATH, '').
-      sub(BacktraceLine::GEMS_PATH, "<strong>\\1</strong>")
+    "#{file.to_s}:#{number}" << (column.present? ? ":#{column}" : "")
   end
 
 end

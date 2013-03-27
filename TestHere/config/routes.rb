@@ -1,11 +1,6 @@
 TestHere::Application.routes.draw do
 
-  resources :problems
-  resources :apps do
-    resources :notices
-  end
-
-  root :to => 'apps#index'
+  root :to => 'notices#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

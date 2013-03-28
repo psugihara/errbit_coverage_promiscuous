@@ -1,0 +1,38 @@
+.window
+  %table.summary
+    %tr
+      %th Message
+      %td.main.nowrap= message_graph(problem)
+    %tr
+      %th Error Class
+      %td= notice.error_class
+    - if notice.request['url'].present?
+      %tr
+        %th URL
+        %td.nowrap= link_to notice.request['url'], notice.request['url']
+    %tr
+      %th Where
+      %td= notice.where
+    %tr
+      %th Occurred
+      %td= notice.created_at.to_s(:precise)
+    %tr
+      %th Similar
+      %td= problem.notices_count - 1
+    %tr
+      %th Browser
+      %td= user_agent_graph(problem)
+    %tr
+      %th Tenant
+      %td= tenant_graph(problem)
+    %tr
+      %th App Server
+      %td= notice.server_environment && notice.server_environment["hostname"]
+    - if notice.framework
+      %tr
+        %th Framework
+        %td= notice.framework
+    %tr
+      %th Rel. Directory
+      %td= notice.server_environment && notice.server_environment["project-root"]
+

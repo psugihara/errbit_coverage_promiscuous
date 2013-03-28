@@ -1,9 +1,9 @@
 ErrbitCoverage
 ================
 
-ErrbreakCoverage subscribes to an errbreak instance and points out places that need more test coverage.
+ErrbreakCoverage subscribes to an Errbit instance and points out places that need more test coverage.
 
-This repo contains 3 rails apps for integration testing and throughput experiments. ErrorThrower reports to Errbit via airbreak and Errbit pushes error notices along to TestHere (renamed ErrbitCoverage) via Promiscuous.
+This repo contains 3 rails apps for integration testing and throughput experiments. ErrorThrower reports to Errbit via Airbrake and Errbit pushes error notices along to TestHere (renamed ErrbitCoverage) via Promiscuous.
 
 ### Running a workload
 
@@ -14,7 +14,7 @@ This repo contains 3 rails apps for integration testing and throughput experimen
                 $ cd TestHere
                 $ bundle exec promiscuous subscribe
 
-2. Start ErrbreakCoverage:
+2. Start ErrbitCoverage:
 
                 $ cd TestHere
                 $ rails s

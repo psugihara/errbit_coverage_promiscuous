@@ -1,0 +1,16 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  flash:
+    apps:
+      create:
+        success: Great success! Configure your app with the API key below
+      update:
+        success: "Good news everyone! '%{app_name}' was successfully updated."
+      destroy:
+        success: "'%{app_name}' was successfully destroyed."
+  n_errs_have:
+    one:   "%{count} err has"
+    other: "%{count} errs have"

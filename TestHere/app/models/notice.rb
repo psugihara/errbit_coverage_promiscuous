@@ -3,15 +3,16 @@ class Notice
   include Mongoid::Timestamps
   include Promiscuous::Subscriber
 
-  # has_one :backtrace
-  # field :backtrace_id_s
+  subscribe do
+    field :message
+    field :server_environment, :type => Hash
+    field :request, :type => Hash
+    field :notifier, :type => Hash
+    field :user_attributes, :type => Hash
+    field :framework
+    field :error_class
 
-  # subscribe :backtrace_id_s
+    belongs_to :backtrace, :index => true
+  end
 
-  field :message
-  subscribe :message
-  
-  before_validation { Rails.logger.info 'notice:before_validation' }
-  before_create { Rails.logger.info 'notice:before_create' }
-  after_create { Rails.logger.info 'created notice' }
 end

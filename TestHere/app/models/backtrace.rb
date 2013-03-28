@@ -1,9 +1,12 @@
 class Backtrace
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Promiscuous::Subscriber
 
   embeds_many :lines, :class_name => "BacktraceLine"
 
-  include Promiscuous::Subscriber
-  subscribe :lines
+  subscribe do
+    field :lines
+  end
+
 end
